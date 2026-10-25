@@ -4,6 +4,60 @@ body {
     overflow: hidden;
 }
 
+#theme {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.theme_switch_heading {
+    user-select: none;
+    position: absolute;
+    top: -15px;
+    left: 75%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6.5rem;
+    letter-spacing: 15px;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+
+.theme_switch {
+    position: fixed;
+    top: 10%;
+    left: 95%;
+    z-index: 2;
+    width: 65px;
+    height: 30px;
+    border-radius: 40px;
+    background: #fff3d18a;
+    cursor: pointer;
+    transition: background 0.6s ease;
+}
+
+.theme_switch::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 24px;
+    height: 24px;
+    border-radius: 40px;
+    background: #fff;
+    transition: translate 0.35s ease;
+}
+
+#theme:checked ~ .theme_switch::before {
+    translate: 35px 0; 
+}
+#theme:checked ~ .theme_switch {
+    background: #859671ac; 
+}
+
 .dark_bg {
     background-image: url(dark.jpg);
     position: fixed;
@@ -12,7 +66,7 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #0f162f
+    background-color: #0f162f;
 }
 
 .light_bg {
@@ -23,7 +77,9 @@ body {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    background-color: #928c81
+    background-color: #928c81;
+    opacity: 0;
+    transition: opacity 0.6s ease;
 }
 
 .blur_bg {
@@ -31,6 +87,32 @@ body {
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(4px);
+}
+
+#theme:checked ~ .light_bg {
+    opacity: 1;
+}
+
+.dark_mode,
+.light_mode {
+    transition: opacity 0.6s ease;
+}
+
+.light_mode {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#theme:checked ~ .dark_mode,
+#theme:checked ~ * .dark_mode {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#theme:checked ~ .light_mode,
+#theme:checked ~ * .light_mode {
+    opacity: 1;
+    pointer-events: auto;
 }
 
 .center_img {
@@ -72,8 +154,8 @@ body {
     transform: translateY(12px) scale(0.85);
     transform-origin: bottom left;
     pointer-events: none;
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    transition-delay: 0;
+    transition: opacity 0.35s ease, transform 0.35s ease, background 0.6s ease;
+    transition-delay: 0s, 0s, 0s;
 }
 
 .your_txt {
@@ -93,8 +175,8 @@ body {
     transform: translateY(12px) scale(0.85);
     transform-origin: bottom right;
     pointer-events: none;
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    transition-delay: 0.2s;
+    transition: opacity 0.35s ease, transform 0.35s ease, background 0.6s ease;
+    transition-delay: 0.2s, 0.2s, 0s;
 }
 
 .fish_txt2 {
@@ -114,26 +196,26 @@ body {
     transform: translateY(12px) scale(0.85);
     transform-origin: bottom left;
     pointer-events: none;
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    transition-delay: 0.4s;
+    transition: opacity 0.35s ease, transform 0.35s ease, background 0.6s ease;
+    transition-delay: 0.4s, 0.4s, 0s;
 }
 
 .center_img:hover ~ .fish_txt1 {
     opacity: 1;
     transform: none;
-    transition-delay: 0;
+    transition-delay: 0s, 0s, 0s;
 }
 
 .center_img:hover ~ .your_txt {
     opacity: 1;
     transform: none;
-    transition-delay: 0.4s;
+    transition-delay: 0.4s, 0.4s, 0s;
 }
 
 .center_img:hover ~ .fish_txt2 {
     opacity: 1;
     transform: none;
-    transition-delay: 0.8s;
+    transition-delay: 0.8s, 0.8s, 0s;
 }
 
 .am_heading {
@@ -155,7 +237,6 @@ body {
     left: 24.5%;
     width: 430px;
     height: 210px;
-    background: linear-gradient(to bottom,  #e63f3f7d 0%, #ffffff17 65%);
     border-radius: 35px;
     padding: 80px 25px 25px 25px;
     color: #fff;
@@ -188,7 +269,7 @@ body {
     padding: 6px 15px 3px 15px;
     background: #3e529a8c;
     border-radius: 22px;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background 0.6s ease;
 }
 
 .likes_tab:hover {
@@ -207,7 +288,7 @@ body {
     padding: 6px 15px 3px 15px;
     background: #3e529a8c;
     border-radius: 22px;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background 0.6s ease;
 }
 
 .dislikes_tab:hover {
@@ -226,7 +307,7 @@ body {
     padding: 6px 15px 3px 15px;
     background: #3e529a8c;
     border-radius: 22px;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background 0.6s ease;
 }
 
 .notes_tab:hover {
@@ -303,11 +384,10 @@ body {
 
 .spotify_win {
     position: absolute;
-    top: 20%;
-    left: 74%;
+    top: 25%;
+    left: 76%;
     height: 360px;
     width: 275px;
-    background: linear-gradient(to bottom,  #e63f3f7d 0%, #ffffff17 65%);
     border-radius: 35px;
     backdrop-filter: blur(3px);
     box-shadow: 0 0 15px #0a0a0a;
@@ -347,6 +427,7 @@ body {
 }
 
 .spotify_logo img {
+    user-select: none;
     position: absolute;
     top: 326px;
     left: 22px;
@@ -366,6 +447,7 @@ body {
 }
 
 .btn_logi {
+    user-select: none;
     position: absolute;
     top: 21%;
     left: 90%;
@@ -399,6 +481,7 @@ body {
 }
 
 .homepage_link {
+    user-select: none;
     position: absolute;
     top: 15px;
     left: 27px;
@@ -434,7 +517,6 @@ body {
     z-index: 0;
     height: 170px;
     width: 170px;
-    background: linear-gradient(to bottom,  #e63f3f7d 30%, #ffffff17 95%);
     border-radius: 35px;
     box-shadow: 0 0 10px #000;
     transition: 0.25s;
@@ -452,7 +534,6 @@ body {
     z-index: 0;
     height: 170px;
     width: 170px;
-    background: linear-gradient(to bottom,  #6474d782 50%, #ffffff17 90%);
     border-radius: 35px;
     box-shadow: 0 0 10px #000;
     transition: 0.25s;
@@ -470,7 +551,6 @@ body {
     z-index: 0;
     height: 170px;
     width: 170px;
-    background: linear-gradient(to bottom,  #faf5e85e 15%, #ffffff0e 90%);
     border-radius: 35px;
     box-shadow: 0 0 10px #000;
     transition: 0.25s;
@@ -738,4 +818,69 @@ body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
 body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
 .music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(7) {
     transition-delay: 0.6s; 
+}
+
+.about_me, .spotify_win {
+    --dark_mode_color:  linear-gradient(to bottom, #e63f3f7d 0%, #ffffff17 65%);
+    --light_mode_color: linear-gradient(to bottom, #005579a2 0%, #ffffff17 65%);
+}
+.music_link a {
+    --dark_mode_color:  linear-gradient(to bottom, #e63f3f7d 30%, #ffffff17 95%);
+    --light_mode_color: linear-gradient(to bottom, #005579a2 60%, #ffffff17 95%);
+}
+.credits_link a {
+    --dark_mode_color:  linear-gradient(to bottom, #6474d782 50%, #ffffff17 90%);
+    --light_mode_color: linear-gradient(to bottom, #cb9537a2 20%, #ffffff17 90%);
+}
+.junkdrawer_link a {
+    --dark_mode_color:  linear-gradient(to bottom, #faf5e85e 15%, #ffffff0e 90%);
+    --light_mode_color: linear-gradient(to bottom, #859671ac 20%, #ffffff0e 90%);
+}
+
+.tint::before,
+.tint::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    transition: opacity 0.6s ease;
+}
+
+.tint::before {
+    background: var(--dark_mode_color);
+}
+.tint::after {
+    background: var(--light_mode_color); opacity: 0;
+}
+
+#theme:checked ~ .tint::before,
+#theme:checked ~ * .tint::before {
+    opacity: 0;
+}
+
+#theme:checked ~ .tint::after,
+#theme:checked ~ * .tint::after {
+    opacity: 1;
+}
+
+#theme:checked ~ .about_me .likes_tab,
+#theme:checked ~ .about_me .dislikes_tab,
+#theme:checked ~ .about_me .notes_tab {
+    background: #b48d389a;
+}
+
+#theme:checked ~ .about_me .likes_tab:hover,
+#theme:checked ~ .about_me .dislikes_tab:hover,
+#theme:checked ~ .about_me .notes_tab:hover {
+    background: #f6c865b5;
+}
+
+#theme:checked ~ .fish_txt1,
+#theme:checked ~ .fish_txt2 { 
+    background: #0e688fbd;
+}
+
+#theme:checked ~ .your_txt {
+    background: #b08b3a98;
 }

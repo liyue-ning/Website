@@ -13,6 +13,7 @@
         <!--THEME SWITCH-->
         <input type="checkbox" id="theme">
         <label for="theme" class="theme_switch" aria-label="Switch mode"></label>
+        <div class="theme_switch_heading">MODE</div>
 
         <!--BACKGROUNDS-->
         <div class="dark_bg"></div>
@@ -28,7 +29,7 @@
             <div class="fish_txt2">oh yeah mb</div>
 
         <!--ABOUT ME-->
-        <div class="about_me">
+        <div class="about_me tint">
             <div class="am_heading">About me</div>
 
             <input type="radio" name="tabs" id="tl">
@@ -51,23 +52,35 @@
             </div>
 
         <!--SPOTIFY PLAYER WINDOW-->
-        <div class="spotify_win">
-            <div class="spotify_tab">
+        <div class="spotify_win tint">
+            <div class="spotify_tab dark_mode">
                 <p><span class= "song_title">MIDNIGHT CRUISIN'</span><br>Kingo Hamada<br></p>
             </div>
-            <div class="album_cover">
-                <img src="midnight_cruisin'.jpg" alt="album cover">
+            <div class="spotify_tab light_mode">
+                <p><span class= "song_title">F L Y</span><br>Spectrum<br></p>
             </div>
+
+            <div class="album_cover">
+                <img class= "dark_mode" src="midnight_cruisin'.jpg" alt="album cover">
+                <img class="light_mode" src="F-L-Y.jpg" alt="album cover">
+            </div>
+
             <div class="spotify_logo">
                 <img src="spotify_logo.png" alt="Spotify">
             </div>
+
             <div class="btn_logi">
-                <iframe class="spotify_btn" 
+                <iframe class="spotify_btn dark_mode" 
                     src="https://open.spotify.com/embed/track/37NPLfEZQQ0rZTa9SRqWBL?utm_source=generator&si=1b161f37ada34769"
                     allow="encrypted-media; autoplay">
                 </iframe>
+                <iframe class="spotify_btn light_mode"
+                    src="https://open.spotify.com/embed/track/7BInSwH3Ha2YMEEezQLz95?utm_source=generator&si=2ab1cd9c22a24471"
+                    allow="encrypted-media; autoplay">
+                </iframe>
             </div>
-            <div class="spotify_lyrics">
+
+            <div class="spotify_lyrics dark_mode">
                 <p>ラジオが泣いてたよ<br>
                 流れる ボズ・スキャッグズ<br>
                 またたく夜にぬれて<br>
@@ -108,6 +121,44 @@
                 突き刺すような ヘッドライト<br>
                 光の海へ アクセル</p>
             </div>
+            <div class="spotify_lyrics light_mode">
+                <p><span class= "eng_lyrics">Fly in the sky</span><br>
+                <span class= "eng_lyrics">Fly in the wind</span> 翔バセココロ<br>
+                <span class= "eng_lyrics">Fly on the sun</span><br>
+                <span class= "eng_lyrics">Fly on the moon</span> 見エテクルヨ<br>
+                <span class= "eng_lyrics">Fly in the sky</span><br>
+                <span class= "eng_lyrics">Fly in the wind</span> 翔バセココロ<br>
+                <span class= "eng_lyrics">Fly on the sun</span><br>
+                <span class= "eng_lyrics">Fly on the moon</span> 見エテクルヨ<br>
+                時計仕掛 狭クナッタ<br>
+                夢ハフワフワ<br>
+                波瀾万丈 金ピカピカ<br>
+                <span class= "eng_lyrics">Fantasy</span> 答エハ<br>
+                イツカ見タ コンサート<br>
+                アノ時ト オンナジサ<br>
+                待チワビタ 箱舟ニ<br>
+                君ヲ乗セテ 行コウ<br>
+                <span class= "eng_lyrics">Fly in the sky</span><br>
+                <span class= "eng_lyrics">Fly in the wind</span> 翔バセココロ<br>
+                <span class= "eng_lyrics">Fly on the sun</span><br>
+                <span class= "eng_lyrics">Fly on the moon</span> 見エテクルヨ<br>
+                眺メセシマ 夜ノシジマ<br>
+                浮カビナガラモ<br>
+                十重二十重二 メクルメクハ<br>
+                <span class= "eng_lyrics">Fantasy</span> 無限ニ<br>
+                知リスギタ 二人ニハ<br>
+                新シイ 旅ガイイ<br>
+                目ヲ閉ジテ ウナズケバ<br>
+                深ク溶ケテ 行ク<br>
+                <span class= "eng_lyrics">Fly in the sky</span><br>
+                <span class= "eng_lyrics">Fly in the wind</span> 翔バセココロ<br>
+                <span class= "eng_lyrics">Fly on the sun</span><br>
+                <span class= "eng_lyrics">Fly on the moon</span> 見エテクルヨ<br>
+                <span class= "eng_lyrics">Fly in the sky</span><br>
+                <span class= "eng_lyrics">Fly in the wind</span> 翔バセココロ<br>
+                <span class= "eng_lyrics">Fly on the sun</span><br>
+                <span class= "eng_lyrics">Fly on the moon</span> 見エテクルヨ<br></p>
+            </div>
         </div>
 
         <!--MORE LINKS-->
@@ -124,7 +175,7 @@
             </div>
 
             <div class="music_link">
-                <a href="musicpage.html" aria-label="Music"></a>
+                <a href="musicpage.html" aria-label="Music" class="tint"></a>
             </div>
             <div class="music_link_heading">
                 <div class="M_music">M</div>
@@ -135,7 +186,7 @@
             </div>
 
             <div class="credits_link">
-                <a href="creditsspage.html" aria-label="Credits"></a>
+                <a href="creditsspage.html" aria-label="Credits" class="tint"></a>
             </div>
             <div class="credits_link_heading">
                 <div class="C_credits">C</div>
@@ -148,7 +199,7 @@
             </div>
 
             <div class="junkdrawer_link">
-                <a href="junkdrawerpage.html" aria-label="Junk Drawer"></a>
+                <a href="junkdrawerpage.html" aria-label="Junk Drawer" class="tint"></a>
             </div>
             <div class="junkdrawer_link_heading">
                 <div class="J_junk">J</div>
@@ -157,5 +208,17 @@
                 <div class="K_junk">K</div>
             </div>
         </div>
+
+        <!--SPOTIFY PLAYBACK FIX-->
+        <script>
+            const themeBox    = document.getElementById('theme');
+            const darkPlayer  = document.querySelector('.spotify_btn.dark_mode');
+            const lightPlayer = document.querySelector('.spotify_btn.light_mode');
+
+            themeBox.addEventListener('change', () => {
+                const hidden = themeBox.checked ? darkPlayer : lightPlayer;
+                setTimeout(() => { hidden.src = hidden.src; }, 700);
+            });
+        </script>
     </body>
 </html>
