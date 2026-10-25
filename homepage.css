@@ -51,6 +51,29 @@ body {
     transition: translate 0.35s ease;
 }
 
+.theme_switch::after {
+    content: "Switch between light or dark mode";
+    position: absolute;
+    top: 120%;
+    left: -200%;
+    padding: 3px 8px;
+    border-radius: 2px;
+    background: #1e1e1e;
+    outline: 1px solid #fff;
+    color: #fff;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 0.6rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.theme_switch:hover::after {
+    opacity: 1;
+    transition: opacity 0.3s ease 0.3s;
+}
+
 #theme:checked ~ .theme_switch::before {
     translate: 35px 0; 
 }
