@@ -1,0 +1,741 @@
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.dark_bg {
+    background-image: url(dark.jpg);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0f162f
+}
+
+.light_bg {
+    background-image: url(light.jpg);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #928c81
+}
+
+.blur_bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+}
+
+.center_img {
+    user-select: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    rotate: 45deg;
+    scale: 1.8;
+    pointer-events: none;
+    filter: drop-shadow(0 0 4px #fff);
+    transition: transform 0.25s cubic-bezier(0.2, 0.1, 0.2, 1);
+}
+
+.center_img img {
+    pointer-events: auto;
+    clip-path: polygon(0 67%, 18% 71%, 38% 100%, 59% 100%, 83% 76%, 100% 89%, 100% 21%, 82% 32%, 63% 0, 39% 0, 19% 29%, 0 32%);
+}
+
+.center_img:hover {
+    transform: scale(1.02);
+}
+
+.fish_txt1 {
+    position: absolute;
+    top: 15%;
+    left: 47%;
+    z-index: 1;
+    color: #fff;
+    opacity: 0;
+    user-select: none;
+    background: #e63f3fc2;
+    box-shadow: 0 6px 10px #0000007e;
+    padding: 10px 17px 10px 14px;
+    border-radius: 30px 30px 30px 8px;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 0.8rem;
+    transform: translateY(12px) scale(0.85);
+    transform-origin: bottom left;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition-delay: 0;
+}
+
+.your_txt {
+    position: absolute;
+    top: 21%;
+    left: 54%;
+    z-index: 1;
+    color: #fff;
+    opacity: 0;
+    user-select: none;
+    background: #3b54c294;
+    box-shadow: 0 6px 10px #0000007e;
+    padding: 11px 17px 12px 14px;
+    border-radius: 30px 30px 8px 30px;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 0.8rem;
+    transform: translateY(12px) scale(0.85);
+    transform-origin: bottom right;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition-delay: 0.2s;
+}
+
+.fish_txt2 {
+    position: absolute;
+    top: 27%;
+    left: 47%;
+    z-index: 1;
+    color: #fff;
+    opacity: 0;
+    user-select: none;
+    background: #e63f3fc2;
+    box-shadow: 0 6px 10px #0000007e;
+    padding: 10px 17px 11px 14px;
+    border-radius: 30px 30px 30px 8px;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 0.8rem;
+    transform: translateY(12px) scale(0.85);
+    transform-origin: bottom left;
+    pointer-events: none;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    transition-delay: 0.4s;
+}
+
+.center_img:hover ~ .fish_txt1 {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0;
+}
+
+.center_img:hover ~ .your_txt {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.4s;
+}
+
+.center_img:hover ~ .fish_txt2 {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.8s;
+}
+
+.am_heading {
+    user-select: none;
+    position: absolute;
+    top: -31%;
+    left: -20%;
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5.8rem;
+    color: #fff;
+    text-shadow: 0 0 13px #00000090;
+}
+
+.about_me {
+    position: absolute;
+    top: 54%;
+    left: 24.5%;
+    width: 430px;
+    height: 210px;
+    background: linear-gradient(to bottom,  #e63f3f7d 0%, #ffffff17 65%);
+    border-radius: 35px;
+    padding: 80px 25px 25px 25px;
+    color: #fff;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 15px #0a0a0a;
+    box-sizing: border-box;
+    transform: perspective(600px) rotateX(-6deg) rotateY(-18deg);
+    transition: transform 0.35s cubic-bezier(.3,.8,.2,1);
+}
+
+.about_me:hover{
+    transform: rotateX(0deg) rotateY(0deg);
+}
+
+.about_me input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.likes_tab {
+    user-select: none;
+    position: absolute;
+    top: 45px;
+    left: 77px;
+    font-family: "Bebas Neue", 'Impact';
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px 15px 3px 15px;
+    background: #3e529a8c;
+    border-radius: 22px;
+    transition: transform 0.2s;
+}
+
+.likes_tab:hover {
+    transform: scale(1.1);
+    background: #5771c5e0;
+}
+
+.dislikes_tab {
+    user-select: none;
+    position: absolute;
+    top: 45px;
+    left: 172px;
+    font-family: "Bebas Neue", 'Impact';
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px 15px 3px 15px;
+    background: #3e529a8c;
+    border-radius: 22px;
+    transition: transform 0.2s;
+}
+
+.dislikes_tab:hover {
+    transform: scale(1.1);
+    background: #5771c5e0;
+}
+
+.notes_tab {
+    user-select: none;
+    position: absolute;
+    top: 45px;
+    left: 285px;
+    font-family: "Bebas Neue", 'Impact';
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 6px 15px 3px 15px;
+    background: #3e529a8c;
+    border-radius: 22px;
+    transition: transform 0.2s;
+}
+
+.notes_tab:hover {
+    transform: scale(1.1);
+    background: #5771c5e0;
+}
+
+.default_info{
+    padding-top: 20px;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 0.9rem;
+}
+
+.likes_info {
+    display: none;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #e8e3d133 transparent;
+    border-radius: 5px;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 0.9rem;
+}
+
+.dislikes_info {
+    display: none;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #e8e3d133 transparent;
+    border-radius: 5px;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 0.9rem;
+
+}
+
+.notes_info {
+    display: none;
+    height: 100%;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #e8e3d133 transparent;
+    border-radius: 5px;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 0.9rem;
+}
+
+#tl:checked ~ .likes_info {
+    display: block;
+}
+
+#td:checked ~ .dislikes_info {
+    display: block;
+}
+
+#tn:checked ~ .notes_info {
+    display: block;
+}
+
+#tl:checked ~ .default_info {
+    display: none;
+}
+
+#td:checked ~ .default_info {
+    display: none;
+}
+
+#tn:checked ~ .default_info {
+    display: none;
+}
+
+.spotify_win {
+    position: absolute;
+    top: 20%;
+    left: 74%;
+    height: 360px;
+    width: 275px;
+    background: linear-gradient(to bottom,  #e63f3f7d 0%, #ffffff17 65%);
+    border-radius: 35px;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 15px #0a0a0a;
+    box-sizing: border-box;
+    transform: perspective(600px) rotateX(6deg) rotateY(18deg);
+    transition: transform 0.35s cubic-bezier(.3,.8,.2,1);
+}
+
+.spotify_win:hover {
+    transform: rotateX(0) rotateY(0);
+}
+
+.album_cover img {
+    user-select: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    height: 80px;
+    width: 80px;
+    border-radius: 13px;
+    box-shadow: -3px 3px 10px #0a0a0a7b;
+}
+
+.spotify_tab {
+    user-select: none;
+    position: absolute;
+    top: 20px;
+    left: 112px;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 0.8rem;
+    color: #fff;
+}
+
+.song_title {
+    font-family: "Oswald", "Impact";
+    font-size: 1.3rem;
+}
+
+.spotify_logo img {
+    position: absolute;
+    top: 326px;
+    left: 22px;
+    height: 16.5px;
+    width: 50px;
+}
+
+.spotify_btn {
+    position: absolute;
+    top: -47px;
+    left: -377px;
+    width: 300px;
+    height: 80px;
+    z-index: 1;
+    transform: scale(2);
+    border: none;
+}
+
+.btn_logi {
+    position: absolute;
+    top: 21%;
+    left: 90%;
+    width: 50px;
+    height: 50px;
+    clip-path: circle(29.1px);
+}
+
+.spotify_lyrics {
+    position: absolute;
+    top: 125px;
+    left: 13px;
+    height: 51%;
+    width: 85%;
+    padding: 0 2px 0 15px;
+    border-radius: 15px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #e8e3d133 transparent;
+    color: #fff;
+    font-family: "LINE Seed JP", "Zen kaku Gothic New Static";
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 2;
+}
+
+.eng_lyrics {
+    font-family: "Montserrat", "Helvetica";
+    font-size: 1.1rem;
+}
+
+.homepage_link {
+    position: absolute;
+    top: 15px;
+    left: 27px;
+    pointer-events: auto;
+    font-family: 'Montserrat', 'Impact';
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.homepage_link:hover {
+    transform: scale(1.1);
+    transform-origin: top;
+}
+
+.homepage_link a, .homepage_link a:visited, .homepage_link a:active {
+    color: #fff;
+    text-decoration: none;
+}
+
+.more_links {
+    position: absolute;
+    translate: 0 100px;
+    inset: 0;
+    pointer-events: none;
+}
+
+.music_link a {
+    pointer-events: auto;
+    position: absolute;
+    top: 10%;
+    left: 3%;
+    z-index: 0;
+    height: 170px;
+    width: 170px;
+    background: linear-gradient(to bottom,  #e63f3f7d 30%, #ffffff17 95%);
+    border-radius: 35px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.music_link a:hover {
+    transform: scale(1.08);
+}
+
+.credits_link a {
+    pointer-events: auto;
+    position: absolute;
+    top: 32%;
+    left: 3%;
+    z-index: 0;
+    height: 170px;
+    width: 170px;
+    background: linear-gradient(to bottom,  #6474d782 50%, #ffffff17 90%);
+    border-radius: 35px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.credits_link a:hover {
+    transform: scale(1.08);
+}
+
+.junkdrawer_link a {
+    pointer-events: auto;
+    position: absolute;
+    top: 54%;
+    left: 3%;
+    z-index: 0;
+    height: 170px;
+    width: 170px;
+    background: linear-gradient(to bottom,  #faf5e85e 15%, #ffffff0e 90%);
+    border-radius: 35px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.junkdrawer_link a:hover {
+    transform: scale(1.08);
+}
+
+.L_links, .M_music, .C_credits {
+    user-select: none;
+    position: absolute;
+    top: 15%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.J_junk {
+    user-select: none;
+    position: absolute;
+    top: 15%;
+    left: 3%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.R_credits {
+    user-select: none;
+    position: absolute;
+    top: 25%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.U_junk {
+    user-select: none;
+    position: absolute;
+    top: 27%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.I_links, .U_music {
+    user-select: none;
+    position: absolute;
+    top: 25%;
+    left: 2.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b; 
+}
+
+.N_links, .E_credits {
+    user-select: none;
+    position: absolute;
+    top: 35%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.N_junk {
+    user-select: none;
+    position: absolute;
+    top: 37%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.S_music {
+    user-select: none;
+    position: absolute;
+    top: 35%;
+    left: 2.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.K_links, .D_credits {
+    user-select: none;
+    position: absolute;
+    top: 45%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.K_junk {
+    user-select: none;
+    position: absolute;
+    top: 47%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.I_music {
+    user-select: none;
+    position: absolute;
+    top: 45%;
+    left: 3%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.C_music, .S_links {
+    user-select: none;
+    position: absolute;
+    top: 55%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.I_credits {
+    user-select: none;
+    position: absolute;
+    top: 55%;
+    left: 2.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.T_credits {
+    user-select: none;
+    position: absolute;
+    top: 65%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.S_credits {
+    user-select: none;
+    position: absolute;
+    top: 75%;
+    left: 2%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 6rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.default_link_heading, .music_link_heading, .credits_link_heading, 
+.junkdrawer_link_heading {
+    pointer-events: none;
+}
+
+.default_link_heading div, .music_link_heading div, .credits_link_heading div, .junkdrawer_link_heading div {
+    transition: opacity 0.35s ease;
+}
+
+.music_link_heading div, .credits_link_heading div, .junkdrawer_link_heading div {
+    opacity: 0;
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) 
+.default_link_heading div {
+    opacity: 0;
+}
+
+body:has(.music_link:hover) .music_link_heading div {
+    opacity: 1; 
+}
+
+body:has(.credits_link:hover) .credits_link_heading div {
+    opacity: 1; 
+}
+
+body:has(.junkdrawer_link:hover) .junkdrawer_link_heading div {
+     opacity: 1; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(1) {
+    transition-delay: 0s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(2) {
+    transition-delay: 0.1s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(3) {
+    transition-delay: 0.2s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(4) {
+    transition-delay: 0.3s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(5) {
+    transition-delay: 0.4s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(6) {
+    transition-delay: 0.5s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(7) {
+    transition-delay: 0.6s; 
+}
