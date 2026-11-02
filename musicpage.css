@@ -1,0 +1,622 @@
+body {
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.vkei_bg {
+    background-image: url(vkei.jpg);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #0f162f;
+}
+
+.j-cp_bg {
+    background-image: url(light.jpg);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #928c81;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.rock_bg {
+    background-image: url(light.jpg);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #928c81;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.misc_bg {
+    background-image: url(light.jpg);
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #928c81;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.blur_bg {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(4px);
+}
+
+.record {
+    user-select: none;
+    position: absolute;
+    top: -4%;
+    left: -30%;
+    transform: scale(0.85);
+}
+
+.genre input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.misc_tab {
+    pointer-events: auto;
+    position: absolute;
+    top: 1%;
+    left: 93%;
+    z-index: 0;
+    height: 90px;
+    width: 90px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.misc_tab:hover {
+    transform: scale(1.06);
+}
+
+.rock_tab {
+    pointer-events: auto;
+    position: absolute;
+    top: 1%;
+    left: 86%;
+    z-index: 0;
+    height: 90px;
+    width: 90px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.rock_tab:hover {
+    transform: scale(1.06);
+}
+
+.j-cp_tab {
+    pointer-events: auto;
+    position: absolute;
+    top: 1%;
+    left: 79%;
+    z-index: 0;
+    height: 90px;
+    width: 90px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.j-cp_tab:hover {
+    transform: scale(1.06);
+}
+
+.vkei_tab {
+    pointer-events: auto;
+    position: absolute;
+    top: 1%;
+    left: 72%;
+    z-index: 0;
+    height: 90px;
+    width: 90px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.vkei_tab:hover {
+    transform: scale(1.06);
+}
+
+.playlist {
+    user-select: none;
+    position: absolute;
+    top: 16%;
+    left: 33%;
+    width: 1020px;
+    height: 622px;
+    background: #16161600;
+    border-radius: 10px;
+}
+
+.song1 {
+    position: absolute;
+    top: 12px;
+    left: 0%;
+    width: 900px;
+    height: 100px;
+    background: #6c6c73;
+    border-radius: 20px;
+    padding: 80px 25px 25px 25px;
+    color: #fff;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 5px #0a0a0a;
+    box-sizing: border-box;
+}
+
+.song2 {
+    position: absolute;
+    top: 135px;
+    left: 45px;
+    width: 900px;
+    height: 100px;
+    background: #4d3e8f58;
+    border-radius: 20px;
+    padding: 80px 25px 25px 25px;
+    color: #fff;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 5px #0a0a0a;
+    box-sizing: border-box;
+}
+
+.song3 {
+    position: absolute;
+    top: 258px;
+    left: 81px;
+    width: 900px;
+    height: 100px;
+    background: #4d3e8f58;
+    border-radius: 20px;
+    padding: 80px 25px 25px 25px;
+    color: #fff;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 5px #0a0a0a;
+    box-sizing: border-box;
+}
+
+.song4 {
+    position: absolute;
+    top: 382px;
+    left: 45px;
+    width: 900px;
+    height: 100px;
+    background: #4d3e8f58;
+    border-radius: 20px;
+    padding: 80px 25px 25px 25px;
+    color: #fff;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 5px #0a0a0a;
+    box-sizing: border-box;
+}
+
+.song5 {
+    position: absolute;
+    top: 505px;
+    left: 0%;
+    width: 900px;
+    height: 100px;
+    background: #4d3e8f58;
+    border-radius: 20px;
+    padding: 80px 25px 25px 25px;
+    color: #fff;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 0 5px #0a0a0a;
+    box-sizing: border-box;
+}
+
+.homepage_link {
+    user-select: none;
+    position: absolute;
+    top: 15px;
+    left: 27px;
+    pointer-events: auto;
+    font-family: 'Montserrat', 'Impact';
+    font-size: 1.8rem;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+.homepage_link:hover {
+    transform: scale(1.06);
+    transform-origin: top;
+}
+
+.homepage_link a, .homepage_link a:visited, .homepage_link a:active {
+    color: #000000;
+    text-decoration: none;
+}
+
+.more_links {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+.junkdrawer_link a {
+    pointer-events: auto;
+    position: absolute;
+    top: 89%;
+    left: 93%;
+    z-index: 0;
+    height: 90px;
+    width: 90px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.junkdrawer_link a:hover {
+    transform: scale(1.06);
+}
+
+.credits_link a {
+    pointer-events: auto;
+    position: absolute;
+    top: 89%;
+    left: 86%;
+    z-index: 0;
+    height: 90px;
+    width: 90px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.credits_link a:hover {
+    transform: scale(1.06);
+}
+
+.music_link a {
+    pointer-events: auto;
+    position: absolute;
+    top: 89%;
+    left: 79%;
+    z-index: 0;
+    height: 90px;
+    width: 90px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #000;
+    transition: 0.25s;
+}
+
+.music_link a:hover {
+    transform: scale(1.06);
+}
+
+.S_credits, .S_links {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 97%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.K_junk {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 96%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.C_music {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 96.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.K_links {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 93%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.N_junk {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 92.3%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.T_credits {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 93.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;    
+}
+
+.I_music {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 94.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.U_junk {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 88.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.I_credits {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 91%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.N_links {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 89%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.S_music {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 91.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.D_credits {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 87%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.U_music {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 88%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.I_links {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 86.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.J_junk {
+    user-select: none;
+    position: absolute;
+    top: 89.4%;
+    left: 86%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5.3rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.L_links {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 83%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.M_music, .E_credits {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 83.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.R_credits {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 79.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.C_credits {
+    user-select: none;
+    position: absolute;
+    top: 91.5%;
+    left: 75.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.default_link_heading, .music_link_heading, .credits_link_heading, 
+.junkdrawer_link_heading {
+    pointer-events: none;
+}
+
+.default_link_heading div, .music_link_heading div, .credits_link_heading div, .junkdrawer_link_heading div {
+    transition: opacity 0.35s ease;
+}
+
+.music_link_heading div, .credits_link_heading div, .junkdrawer_link_heading div {
+    opacity: 0;
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) 
+.default_link_heading div {
+    opacity: 0;
+}
+
+body:has(.music_link:hover) .music_link_heading div {
+    opacity: 1; 
+}
+
+body:has(.credits_link:hover) .credits_link_heading div {
+    opacity: 1; 
+}
+
+body:has(.junkdrawer_link:hover) .junkdrawer_link_heading div {
+     opacity: 1; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(7) {
+    transition-delay: 0s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(6) {
+    transition-delay: 0.1s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(5) {
+    transition-delay: 0.2s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(4) {
+    transition-delay: 0.3s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(3) {
+    transition-delay: 0.4s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(2) {
+    transition-delay: 0.5s; 
+}
+
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
+.music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(1) {
+    transition-delay: 0.6s; 
+}
