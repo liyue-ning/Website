@@ -503,28 +503,6 @@ body {
     font-size: 1.1rem;
 }
 
-.homepage_link {
-    user-select: none;
-    position: absolute;
-    top: 15px;
-    left: 27px;
-    pointer-events: auto;
-    font-family: 'Montserrat', 'Impact';
-    font-size: 1.8rem;
-    font-weight: bold;
-    transition: 0.2s;
-}
-
-.homepage_link:hover {
-    transform: scale(1.1);
-    transform-origin: top;
-}
-
-.homepage_link a, .homepage_link a:visited, .homepage_link a:active {
-    color: #fff;
-    text-decoration: none;
-}
-
 .more_links {
     position: absolute;
     translate: 0 100px;
