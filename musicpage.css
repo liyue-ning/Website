@@ -90,7 +90,8 @@ body > input[type="radio"]{
     position: absolute;
     inset: 0;
     overflow-y: scroll;
-    scrollbar-width: none;
+    scrollbar-width: thin;
+    scrollbar-color: #000 #ffffff28;
     scroll-timeline: --playlist y;
     border-radius: 50%;
     scroll-padding-block: 50%;  
