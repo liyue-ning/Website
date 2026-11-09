@@ -5,6 +5,21 @@ body {
     timeline-scope: --playlist;
 }
 
+body > input[type="radio"]{
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#tv:checked ~ .playlist_box .vkei_playlist, #tj:checked ~ .playlist_box .j-cp_playlist, #tr:checked ~ .playlist_box .rock_playlist, #tm:checked ~ .playlist_box .misc_playlist {
+    display: block;
+}
+
+#tj:checked ~ .j-cp_bg, #tr:checked ~ .rock_bg, #tm:checked ~ .misc_bg {
+    opacity: 1;
+}
+
 .vkei_bg {
     background-image: url(vkei.jpg);
     position: fixed;
@@ -17,7 +32,7 @@ body {
 }
 
 .j-cp_bg {
-    background-image: url(light.jpg);
+    background-image: url(citypop3.jpeg);
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -30,7 +45,7 @@ body {
 }
 
 .rock_bg {
-    background-image: url(light.jpg);
+    background-image: url(rock.jpg);
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -43,7 +58,7 @@ body {
 }
 
 .misc_bg {
-    background-image: url(light.jpg);
+    background-image: url(misc.jpg);
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -67,17 +82,60 @@ body {
     position: absolute;
     top: -4%;
     left: -30%;
-    transform: scale(0.85);
+    transform: scale(0.8);
+    border-radius: 100%;
 }
 
-.genre input[type="radio"]{
+.record_scroll {
     position: absolute;
-    opacity: 0;
-    width: 0;
+    inset: 0;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    scroll-timeline: --playlist y;
+    border-radius: 50%;
+    scroll-padding-block: 50%;  
+    overscroll-behavior: contain;
+}
+
+.record_scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.record_spacer {
+    position: relative;
+    height: 20000px;
+}
+
+.record_mid {
+    position: absolute;
+    top: 10000px;
     height: 0;
+    scroll-initial-target: nearest;
+}
+
+.record img {
+    transition: scale 0.3s;
+    will-change: transform;
+    animation: spin_record linear both;
+    animation-timeline: --playlist;
+}
+
+.record:hover img {
+    scale: 1.0625; 
+}
+
+@keyframes spin_record {
+    to { rotate: 18000deg; }
+}
+
+.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist {
+    position: absolute;
+    inset: 0;
+    display: none;
 }
 
 .misc_tab {
+    user-select: none;
     pointer-events: auto;
     position: absolute;
     top: 1%;
@@ -95,6 +153,7 @@ body {
 }
 
 .rock_tab {
+    user-select: none;
     pointer-events: auto;
     position: absolute;
     top: 1%;
@@ -112,6 +171,7 @@ body {
 }
 
 .j-cp_tab {
+    user-select: none;
     pointer-events: auto;
     position: absolute;
     top: 1%;
@@ -129,6 +189,7 @@ body {
 }
 
 .vkei_tab {
+    user-select: none;
     pointer-events: auto;
     position: absolute;
     top: 1%;
@@ -145,7 +206,20 @@ body {
     transform: scale(1.06);
 }
 
-.I_v-kei, .P_j-cp, .K_rock, .dot_misc {
+.K_rock {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 96%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.dot_misc {
     user-select: none;
     position: absolute;
     top: 2%;
@@ -158,6 +232,208 @@ body {
     text-shadow: 0 0 10px #0a0a0a7b;
 }
 
+.I_v-kei {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 97.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.P_j-cp, .E_genre {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 96.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.R_genre, .E_v-kei, .C_j-cp, .C_rock, .C_misc {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 92%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.E_v-kei {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 93%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.K_v-kei, .-_j-cp, .S_misc {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 88%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.N_genre, .O_rock {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 87.5%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.E2_genre, .R_rock {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 83%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.-_v-kei, .J_j-cp, .I_misc {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 84%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.I_misc {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 85%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.G_genre {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 78%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.V_v-kei, .M_misc {
+    user-select: none;
+    position: absolute;
+    top: 2%;
+    left: 79%;    
+    z-index: 1;
+    font-family: "Playfair", "Anton";
+    font-weight: 900;
+    font-size: 5rem;
+    color: #f7f5f1;
+    text-shadow: 0 0 10px #0a0a0a7b;
+}
+
+.default_genre_heading, .tv_heading, .tj_heading, .tm_heading,
+.tr_heading {
+    pointer-events: none;
+}
+
+.default_genre_heading div, .tv_heading div, .tj_heading div, .tr_heading div, .tm_heading div {
+    transition: opacity 0.35s ease;
+}
+
+.tv_heading div, .tj_heading div, .tr_heading div, .tm_heading div {
+    opacity: 0;
+}
+
+body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) 
+.default_genre_heading div {
+    opacity: 0;
+}
+
+body:has(.vkei_tab:hover) .tv_heading div {
+    opacity: 1; 
+}
+
+body:has(.j-cp_tab:hover) .tj_heading div {
+    opacity: 1; 
+}
+
+body:has(.rock_tab:hover) .tr_heading div {
+     opacity: 1; 
+}
+
+body:has(.misc_tab:hover) .tm_heading div {
+     opacity: 1; 
+}
+
+body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
+.tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(5) {
+    transition-delay: 0s; 
+}
+
+body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
+.tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(4) {
+    transition-delay: 0.1s; 
+}
+
+body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
+.tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(3) {
+    transition-delay: 0.2s; 
+}
+
+body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
+.tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(2) {
+    transition-delay: 0.3s; 
+}
+
+body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
+.tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(1) {
+    transition-delay: 0.4s; 
+}
+
 .playlist_box {
     user-select: none;
     position: absolute;
@@ -165,161 +441,197 @@ body {
     left: 33%;
     width: 1020px;
     height: 622px;
-    background: #161616da;
+    background: #32323200;
     border-radius: 10px;
     overflow-y: hidden;
     scrollbar-width: thin;
     scrollbar-color: #e8e3d133 transparent;
 }
 
-.song1 {
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div {
     position: absolute;
-    top: 12px;
-    left: 10px;
-    width: 900px;
+    top: 0;
+    left: 0;
+    width: 800px;
     height: 100px;
     background: #4d3e8f58;
     border-radius: 20px;
     padding: 80px 25px 25px 25px;
     color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
     box-sizing: border-box;
+    will-change: transform;
+    transform-origin: left center;
 }
 
-.song2 {
-    position: absolute;
-    top: 135px;
-    left: 55px;
-    width: 900px;
-    height: 100px;
-    background: #4d3e8f58;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
-    color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
-    box-sizing: border-box;
+:root {
+    --slot1: translate(10px, 17px)  scale(0.85);
+    --slot2: translate(50px, 131px) scale(1);
+    --slot3: translate(80px, 261px) scale(1.15);
+    --slot4: translate(50px, 390px) scale(1);
+    --slot5: translate(10px, 505px) scale(0.85);
+    --below: translate(10px, 505px) scale(0);
+    --above: translate(10px, 17px)  scale(0);
 }
 
-.song3 {
-    position: absolute;
-    top: 258px;
-    left: 91px;
-    width: 900px;
-    height: 100px;
-    background: #4d3e8f58;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
-    color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
-    box-sizing: border-box;
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div {
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: both;
+    animation-iteration-count: 20;
+    animation-timeline: --playlist;
 }
 
-.song4 {
-    position: absolute;
-    top: 382px;
-    left: 55px;
-    width: 900px;
-    height: 100px;
-    background: #4d3e8f58;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
-    color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
-    box-sizing: border-box;
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(1)  {
+    animation-name: song_1;
+}
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(2)  { 
+    animation-name: song_2; 
+}
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(3)  { 
+    animation-name: song_3; 
+}
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(4)  { 
+    animation-name: song_4; 
+}
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(5)  { 
+    animation-name: song_5; 
+}
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(6)  { 
+    animation-name: song_6; 
+}
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(7)  { 
+    animation-name: song_7; 
+}
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(8)  { 
+    animation-name: song_8; 
+}
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(9)  { 
+    animation-name: song_9; 
+}
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(10) { 
+    animation-name: song_10; 
 }
 
-.song5 {
-    position: absolute;
-    top: 505px;
-    left: 10px;
-    width: 900px;
-    height: 100px;
-    background: #4d3e8f58;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
-    color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
-    box-sizing: border-box;
+@keyframes song_1 {
+    0%     { transform: var(--slot1); opacity: 1; }
+    10%    { transform: var(--above); opacity: 0; }
+    10.01% { transform: var(--below); opacity: 0; }
+    50%    { transform: var(--below); opacity: 0; }
+    60%    { transform: var(--slot5); opacity: 1; }
+    70%    { transform: var(--slot4); opacity: 1; }
+    80%    { transform: var(--slot3); opacity: 1; }
+    90%    { transform: var(--slot2); opacity: 1; }
+    100%   { transform: var(--slot1); opacity: 1; }
 }
 
-.song6 {
-    position: absolute;
-    top: 600px;
-    left: 0%;
-    width: 900px;
-    height: 100px;
-    background: #6c6c73;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
-    color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
-    box-sizing: border-box;
+@keyframes song_2 {
+    0%     { transform: var(--slot2); opacity: 1; }
+    10%    { transform: var(--slot1); opacity: 1; }
+    20%    { transform: var(--above); opacity: 0; }
+    20.01% { transform: var(--below); opacity: 0; }
+    60%    { transform: var(--below); opacity: 0; }
+    70%    { transform: var(--slot5); opacity: 1; }
+    80%    { transform: var(--slot4); opacity: 1; }
+    90%    { transform: var(--slot3); opacity: 1; }
+    100%   { transform: var(--slot2); opacity: 1; }
 }
 
-.song7 {
-    position: absolute;
-    top: 700px;
-    left: 0%;
-    width: 900px;
-    height: 100px;
-    background: #6c6c73;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
-    color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
-    box-sizing: border-box;
+@keyframes song_3 {
+    0%     { transform: var(--slot3); opacity: 1; }
+    10%    { transform: var(--slot2); opacity: 1; }
+    20%    { transform: var(--slot1); opacity: 1; }
+    30%    { transform: var(--above); opacity: 0; }
+    30.01% { transform: var(--below); opacity: 0; }
+    70%    { transform: var(--below); opacity: 0; }
+    80%    { transform: var(--slot5); opacity: 1; }
+    90%    { transform: var(--slot4); opacity: 1; }
+    100%   { transform: var(--slot3); opacity: 1; }
 }
 
-.song8 {
-    position: absolute;
-    top: 800px;
-    left: 0%;
-    width: 900px;
-    height: 100px;
-    background: #6c6c73;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
-    color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
-    box-sizing: border-box;
+@keyframes song_4 {
+    0%     { transform: var(--slot4); opacity: 1; }
+    10%    { transform: var(--slot3); opacity: 1; }
+    20%    { transform: var(--slot2); opacity: 1; }
+    30%    { transform: var(--slot1); opacity: 1; }
+    40%    { transform: var(--above); opacity: 0; }
+    40.01% { transform: var(--below); opacity: 0; }
+    80%    { transform: var(--below); opacity: 0; }
+    90%    { transform: var(--slot5); opacity: 1; }
+    100%   { transform: var(--slot4); opacity: 1; }
 }
 
-.song9 {
-    position: absolute;
-    top: 900px;
-    left: 0%;
-    width: 900px;
-    height: 100px;
-    background: #6c6c73;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
-    color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
-    box-sizing: border-box;
+@keyframes song_5 {
+    0%     { transform: var(--slot5); opacity: 1; }
+    10%    { transform: var(--slot4); opacity: 1; }
+    20%    { transform: var(--slot3); opacity: 1; }
+    30%    { transform: var(--slot2); opacity: 1; }
+    40%    { transform: var(--slot1); opacity: 1; }
+    50%    { transform: var(--above); opacity: 0; }
+    50.01% { transform: var(--below); opacity: 0; }
+    90%    { transform: var(--below); opacity: 0; }
+    100%   { transform: var(--slot5); opacity: 1; }
 }
 
-.song10 {
-    position: absolute;
-    top: 1000px;
-    left: 0%;
-    width: 900px;
-    height: 100px;
-    background: #6c6c73;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
-    color: #fff;
-    backdrop-filter: blur(3px);
-    box-shadow: 0 0 5px #0a0a0a;
-    box-sizing: border-box;
+@keyframes song_6 {
+    0%     { transform: var(--below); opacity: 0; }
+    10%    { transform: var(--slot5); opacity: 1; }
+    20%    { transform: var(--slot4); opacity: 1; }
+    30%    { transform: var(--slot3); opacity: 1; }
+    40%    { transform: var(--slot2); opacity: 1; }
+    50%    { transform: var(--slot1); opacity: 1; }
+    60%    { transform: var(--above); opacity: 0; }
+    60.01% { transform: var(--below); opacity: 0; }
+    100%   { transform: var(--below); opacity: 0; }
+}
+
+@keyframes song_7 {
+    0%     { transform: var(--below); opacity: 0; }
+    10%    { transform: var(--below); opacity: 0; }
+    20%    { transform: var(--slot5); opacity: 1; }
+    30%    { transform: var(--slot4); opacity: 1; }
+    40%    { transform: var(--slot3); opacity: 1; }
+    50%    { transform: var(--slot2); opacity: 1; }
+    60%    { transform: var(--slot1); opacity: 1; }
+    70%    { transform: var(--above); opacity: 0; }
+    70.01% { transform: var(--below); opacity: 0; }
+    100%   { transform: var(--below); opacity: 0; }
+}
+
+@keyframes song_8 {
+    0%     { transform: var(--below); opacity: 0; }
+    20%    { transform: var(--below); opacity: 0; }
+    30%    { transform: var(--slot5); opacity: 1; }
+    40%    { transform: var(--slot4); opacity: 1; }
+    50%    { transform: var(--slot3); opacity: 1; }
+    60%    { transform: var(--slot2); opacity: 1; }
+    70%    { transform: var(--slot1); opacity: 1; }
+    80%    { transform: var(--above); opacity: 0; }
+    80.01% { transform: var(--below); opacity: 0; }
+    100%   { transform: var(--below); opacity: 0; }
+}
+
+@keyframes song_9 {
+    0%     { transform: var(--below); opacity: 0; }
+    30%    { transform: var(--below); opacity: 0; }
+    40%    { transform: var(--slot5); opacity: 1; }
+    50%    { transform: var(--slot4); opacity: 1; }
+    60%    { transform: var(--slot3); opacity: 1; }
+    70%    { transform: var(--slot2); opacity: 1; }
+    80%    { transform: var(--slot1); opacity: 1; }
+    90%    { transform: var(--above); opacity: 0; }
+    90.01% { transform: var(--below); opacity: 0; }
+    100%   { transform: var(--below); opacity: 0; }
+}
+
+@keyframes song_10 {
+    0%     { transform: var(--above); opacity: 0; }
+    0.01%  { transform: var(--below); opacity: 0; }
+    40%    { transform: var(--below); opacity: 0; }
+    50%    { transform: var(--slot5); opacity: 1; }
+    60%    { transform: var(--slot4); opacity: 1; }
+    70%    { transform: var(--slot3); opacity: 1; }
+    80%    { transform: var(--slot2); opacity: 1; }
+    90%    { transform: var(--slot1); opacity: 1; }
+    100%   { transform: var(--above); opacity: 0; }
 }
 
 .homepage_link {
@@ -586,12 +898,12 @@ body {
 .J_junk {
     user-select: none;
     position: absolute;
-    top: 89.4%;
-    left: 86%;    
+    top: 92%;
+    left: 86.5%;    
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
-    font-size: 5.3rem;
+    font-size: 4rem;
     color: #f7f5f1;
     text-shadow: 0 0 10px #0a0a0a7b;
 }
