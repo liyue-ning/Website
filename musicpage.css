@@ -32,7 +32,7 @@ body > input[type="radio"]{
 }
 
 .j-cp_bg {
-    background-image: url(citypop3.jpeg);
+    background-image: url(citypop.jpeg);
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -145,6 +145,7 @@ body > input[type="radio"]{
     height: 90px;
     width: 90px;
     border-radius: 15px;
+    color: linear-gradient(to bottom, #ff00ff5e 15%, #ffffff17 90%);
     box-shadow: 0 0 10px #000;
     transition: 0.25s;
 }
@@ -163,6 +164,7 @@ body > input[type="radio"]{
     height: 90px;
     width: 90px;
     border-radius: 15px;
+    color: linear-gradient(to bottom, #faf5e85e 15%);
     box-shadow: 0 0 10px #000;
     transition: 0.25s;
 }
@@ -181,6 +183,7 @@ body > input[type="radio"]{
     height: 90px;
     width: 90px;
     border-radius: 15px;
+    color: linear-gradient(to bottom, #faf5e85e 15%);
     box-shadow: 0 0 10px #000;
     transition: 0.25s;
 }
@@ -199,6 +202,7 @@ body > input[type="radio"]{
     height: 90px;
     width: 90px;
     border-radius: 15px;
+    color: linear-gradient(to bottom, #faf5e85e 15%);
     box-shadow: 0 0 10px #000;
     transition: 0.25s;
 }
@@ -439,7 +443,7 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
     user-select: none;
     position: absolute;
     top: 16%;
-    left: 33%;
+    left: 34%;
     width: 1020px;
     height: 622px;
     background: #32323200;
