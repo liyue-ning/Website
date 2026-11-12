@@ -77,6 +77,16 @@ body > input[type="radio"]{
     backdrop-filter: blur(4px);
 }
 
+.note {
+    user-select: none; 
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    color: #000;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 1.2rem;
+}
+
 .record {
     user-select: none;
     position: absolute;

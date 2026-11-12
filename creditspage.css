@@ -15,6 +15,16 @@ body {
     background-color: #090909;
 }
 
+.note {
+    user-select: none; 
+    position: absolute;
+    top: 20%;
+    left: 2%;
+    color: #fff;
+    font-family: "Montserrat", "Helvetica";
+    font-size: 1.2rem;
+}
+
 .homepage_link {
     user-select: none;
     position: absolute;
@@ -52,7 +62,7 @@ body {
     height: 90px;
     width: 90px;
     border-radius: 15px;
-    box-shadow: 0 0 10px #ee0202;
+    box-shadow: 0 0 10px #fff;
     transition: 0.25s;
 }
 
@@ -69,7 +79,7 @@ body {
     height: 90px;
     width: 90px;
     border-radius: 15px;
-    box-shadow: 0 0 10px #f90202;
+    box-shadow: 0 0 10px #fff;
     transition: 0.25s;
 }
 
@@ -86,7 +96,7 @@ body {
     height: 90px;
     width: 90px;
     border-radius: 15px;
-    box-shadow: 0 0 10px #fc0303;
+    box-shadow: 0 0 10px #fff;
     transition: 0.25s;
 }
 
