@@ -1,7 +1,24 @@
-body {
-    margin: 0;
+:root {
+    --W: 1536;
+    --H: 889;
+    --u: min(calc(100vw / var(--W)), calc(100vh / var(--H)));
+    --s: tan(atan2(var(--u), 1px));
+}
+
+html {
     height: 100%;
     overflow: hidden;
+    display: grid;
+    place-items: center;
+    background: #b8b2c2;
+    font-size: calc(var(--u) * 16);
+}
+
+body {
+    margin: 0;
+    position: relative;
+    width: calc(var(--u) * var(--W));
+    height: calc(var(--u) * var(--H));
     timeline-scope: --playlist;
 }
 
@@ -23,6 +40,8 @@ body > input[type="radio"]{
 .vkei_bg {
     background-image: url(vkei.jpg);
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-position: center center;
@@ -34,6 +53,8 @@ body > input[type="radio"]{
 .j-cp_bg {
     background-image: url(citypop.jpeg);
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-position: center center;
@@ -47,6 +68,8 @@ body > input[type="radio"]{
 .rock_bg {
     background-image: url(rock.jpg);
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-position: center center;
@@ -60,6 +83,8 @@ body > input[type="radio"]{
 .misc_bg {
     background-image: url(misc.jpg);
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     background-position: center center;
@@ -72,13 +97,15 @@ body > input[type="radio"]{
 
 .blur_bg {
     position: fixed;
+    top: 0;
+    left: 0;
     width: 100vw;
     height: 100vh;
     backdrop-filter: blur(4px);
 }
 
 .note {
-    user-select: none; 
+    user-select: none;
     position: absolute;
     top: 10%;
     left: 30%;
@@ -94,6 +121,7 @@ body > input[type="radio"]{
     left: -30%;
     transform: scale(0.8);
     border-radius: 100%;
+    zoom: var(--s);
 }
 
 .record_scroll {
@@ -104,7 +132,7 @@ body > input[type="radio"]{
     scrollbar-color: #000 #ffffff28;
     scroll-timeline: --playlist y;
     border-radius: 50%;
-    scroll-padding-block: 50%;  
+    scroll-padding-block: 50%;
     overscroll-behavior: contain;
 }
 
@@ -114,12 +142,12 @@ body > input[type="radio"]{
 
 .record_spacer {
     position: relative;
-    height: 20000px;
+    height: 30000px;
 }
 
 .record_mid {
     position: absolute;
-    top: 10000px;
+    top: 15000px;    
     height: 0;
     scroll-initial-target: nearest;
 }
@@ -132,7 +160,7 @@ body > input[type="radio"]{
 }
 
 .record:hover img {
-    scale: 1.0625; 
+    scale: 1.0625;
 }
 
 @keyframes spin_record {
@@ -152,11 +180,11 @@ body > input[type="radio"]{
     top: 1%;
     left: 93%;
     z-index: 0;
-    height: 90px;
-    width: 90px;
-    border-radius: 15px;
+    height: 5.625rem;
+    width: 5.625rem;
+    border-radius: 0.9375rem;
     color: linear-gradient(to bottom, #ff00ff5e 15%, #ffffff17 90%);
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 0.625rem #000;
     transition: 0.25s;
 }
 
@@ -171,11 +199,11 @@ body > input[type="radio"]{
     top: 1%;
     left: 86%;
     z-index: 0;
-    height: 90px;
-    width: 90px;
-    border-radius: 15px;
+    height: 5.625rem;
+    width: 5.625rem;
+    border-radius: 0.9375rem;
     color: linear-gradient(to bottom, #faf5e85e 15%);
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 0.625rem #000;
     transition: 0.25s;
 }
 
@@ -190,11 +218,11 @@ body > input[type="radio"]{
     top: 1%;
     left: 79%;
     z-index: 0;
-    height: 90px;
-    width: 90px;
-    border-radius: 15px;
+    height: 5.625rem;
+    width: 5.625rem;
+    border-radius: 0.9375rem;
     color: linear-gradient(to bottom, #faf5e85e 15%);
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 0.625rem #000;
     transition: 0.25s;
 }
 
@@ -209,11 +237,11 @@ body > input[type="radio"]{
     top: 1%;
     left: 72%;
     z-index: 0;
-    height: 90px;
-    width: 90px;
-    border-radius: 15px;
+    height: 5.625rem;
+    width: 5.625rem;
+    border-radius: 0.9375rem;
     color: linear-gradient(to bottom, #faf5e85e 15%);
-    box-shadow: 0 0 10px #000;
+    box-shadow: 0 0 0.625rem #000;
     transition: 0.25s;
 }
 
@@ -225,169 +253,169 @@ body > input[type="radio"]{
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 96%;    
+    left: 96%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .dot_misc {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 97%;    
+    left: 97%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .I_v-kei {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 97.5%;    
+    left: 97.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .P_j-cp, .E_genre {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 96.5%;    
+    left: 96.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .R_genre, .E_v-kei, .C_j-cp, .C_rock, .C_misc {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 92%;    
+    left: 92%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .E_v-kei {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 93%;    
+    left: 93%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .K_v-kei, .-_j-cp, .S_misc {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 88%;    
+    left: 88%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .N_genre, .O_rock {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 87.5%;    
+    left: 87.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .E2_genre, .R_rock {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 83%;    
+    left: 83%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .-_v-kei, .J_j-cp, .I_misc {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 84%;    
+    left: 84%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .I_misc {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 85%;    
+    left: 85%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .G_genre {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 78%;    
+    left: 78%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .V_v-kei, .M_misc {
     user-select: none;
     position: absolute;
     top: 2%;
-    left: 79%;    
+    left: 79%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .default_genre_heading, .tv_heading, .tj_heading, .tm_heading,
@@ -403,50 +431,50 @@ body > input[type="radio"]{
     opacity: 0;
 }
 
-body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) 
+body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover)
 .default_genre_heading div {
     opacity: 0;
 }
 
 body:has(.vkei_tab:hover) .tv_heading div {
-    opacity: 1; 
+    opacity: 1;
 }
 
 body:has(.j-cp_tab:hover) .tj_heading div {
-    opacity: 1; 
+    opacity: 1;
 }
 
 body:has(.rock_tab:hover) .tr_heading div {
-     opacity: 1; 
+    opacity: 1;
 }
 
 body:has(.misc_tab:hover) .tm_heading div {
-     opacity: 1; 
+    opacity: 1;
 }
 
 body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
 .tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(5) {
-    transition-delay: 0s; 
+    transition-delay: 0s;
 }
 
 body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
 .tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(4) {
-    transition-delay: 0.1s; 
+    transition-delay: 0.1s;
 }
 
 body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
 .tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(3) {
-    transition-delay: 0.2s; 
+    transition-delay: 0.2s;
 }
 
 body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
 .tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(2) {
-    transition-delay: 0.3s; 
+    transition-delay: 0.3s;
 }
 
 body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
 .tv_heading, .tj_heading, .tm_heading, .tr_heading) div:nth-child(1) {
-    transition-delay: 0.4s; 
+    transition-delay: 0.4s;
 }
 
 .playlist_box {
@@ -454,10 +482,10 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
     position: absolute;
     top: 16%;
     left: 34%;
-    width: 1020px;
-    height: 622px;
+    width: 63.75rem;
+    height: 38.875rem;
     background: #32323200;
-    border-radius: 10px;
+    border-radius: 0.625rem;
     overflow-y: hidden;
     scrollbar-width: thin;
     scrollbar-color: #e8e3d133 transparent;
@@ -467,11 +495,11 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
     position: absolute;
     top: 0;
     left: 0;
-    width: 800px;
-    height: 100px;
+    width: 50rem;
+    height: 6.25rem;
     background: #4d3e8f58;
-    border-radius: 20px;
-    padding: 80px 25px 25px 25px;
+    border-radius: 1.25rem;
+    padding: 5rem 1.5625rem 1.5625rem 1.5625rem;
     color: #fff;
     box-sizing: border-box;
     will-change: transform;
@@ -479,13 +507,13 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
 }
 
 :root {
-    --slot1: translate(10px, 17px)  scale(0.85);
-    --slot2: translate(50px, 131px) scale(1);
-    --slot3: translate(80px, 261px) scale(1.15);
-    --slot4: translate(50px, 390px) scale(1);
-    --slot5: translate(10px, 505px) scale(0.85);
-    --below: translate(10px, 505px) scale(0);
-    --above: translate(10px, 17px)  scale(0);
+    --slot1: translate(0.625rem, 1.0625rem)  scale(0.85);
+    --slot2: translate(3.125rem, 8.1875rem) scale(1);
+    --slot3: translate(5rem, 16.3125rem) scale(1.15);
+    --slot4: translate(3.125rem, 24.375rem) scale(1);
+    --slot5: translate(0.625rem, 31.5625rem) scale(0.85);
+    --below: translate(0.625rem, 31.5625rem) scale(0);
+    --above: translate(0.625rem, 1.0625rem)  scale(0);
 }
 
 :is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div {
@@ -495,35 +523,44 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
     animation-timeline: --playlist;
 }
 
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(1)  {
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(1) {
     animation-name: song_1;
 }
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(2)  { 
-    animation-name: song_2; 
+
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(2) {
+    animation-name: song_2;
 }
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(3)  { 
-    animation-name: song_3; 
+
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(3) {
+    animation-name: song_3;
 }
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(4)  { 
-    animation-name: song_4; 
+
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(4) {
+    animation-name: song_4;
 }
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(5)  { 
-    animation-name: song_5; 
+
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(5) {
+    animation-name: song_5;
 }
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(6)  { 
-    animation-name: song_6; 
+
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(6) {
+    animation-name: song_6;
 }
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(7)  { 
-    animation-name: song_7; 
+
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(7) {
+    animation-name: song_7;
 }
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(8)  { 
-    animation-name: song_8; 
+
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(8) {
+    animation-name: song_8;
 }
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(9)  { 
-    animation-name: song_9; 
+
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(9) {
+    animation-name: song_9;
 }
-:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(10) { 
-    animation-name: song_10; 
+
+:is(.vkei_playlist, .j-cp_playlist, .rock_playlist, .misc_playlist) > div:nth-child(10) {
+    animation-name: song_10;
 }
 
 @keyframes song_1 {
@@ -652,8 +689,8 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
 .homepage_link {
     user-select: none;
     position: absolute;
-    top: 10px;
-    left: 15px;
+    top: 0.625rem;
+    left: 0.9375rem;
     pointer-events: auto;
     font-family: 'Montserrat', 'Impact';
     font-size: 1.8rem;
@@ -683,10 +720,10 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
     top: 89%;
     left: 93%;
     z-index: 0;
-    height: 90px;
-    width: 90px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #000;
+    height: 5.625rem;
+    width: 5.625rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0 0.625rem #000;
     transition: 0.25s;
 }
 
@@ -700,10 +737,10 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
     top: 89%;
     left: 86%;
     z-index: 0;
-    height: 90px;
-    width: 90px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #000;
+    height: 5.625rem;
+    width: 5.625rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0 0.625rem #000;
     transition: 0.25s;
 }
 
@@ -717,10 +754,10 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
     top: 89%;
     left: 79%;
     z-index: 0;
-    height: 90px;
-    width: 90px;
-    border-radius: 15px;
-    box-shadow: 0 0 10px #000;
+    height: 5.625rem;
+    width: 5.625rem;
+    border-radius: 0.9375rem;
+    box-shadow: 0 0 0.625rem #000;
     transition: 0.25s;
 }
 
@@ -732,250 +769,250 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 97%;    
+    left: 97%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .K_junk {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 96%;    
+    left: 96%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .C_music {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 96.5%;    
+    left: 96.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .K_links {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 93%;    
+    left: 93%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .N_junk {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 92.3%;    
+    left: 92.3%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .T_credits {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 93.5%;    
+    left: 93.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;    
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .I_music {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 94.5%;    
+    left: 94.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .U_junk {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 88.5%;    
+    left: 88.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .I_credits {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 91%;    
+    left: 91%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .N_links {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 89%;    
+    left: 89%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .S_music {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 91.5%;    
+    left: 91.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .D_credits {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 87%;    
+    left: 87%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .U_music {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 88%;    
+    left: 88%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .I_links {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 86.5%;    
+    left: 86.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .J_junk {
     user-select: none;
     position: absolute;
     top: 92%;
-    left: 86.5%;    
+    left: 86.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 4rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .L_links {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 83%;    
+    left: 83%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .M_music, .E_credits {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 83.5%;    
+    left: 83.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .R_credits {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 79.5%;    
+    left: 79.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
 .C_credits {
     user-select: none;
     position: absolute;
     top: 91.5%;
-    left: 75.5%;    
+    left: 75.5%;
     z-index: 1;
     font-family: "Playfair", "Anton";
     font-weight: 900;
     font-size: 5rem;
     color: #f7f5f1;
-    text-shadow: 0 0 10px #0a0a0a7b;
+    text-shadow: 0 0 0.625rem #0a0a0a7b;
 }
 
-.default_link_heading, .music_link_heading, .credits_link_heading, 
+.default_link_heading, .music_link_heading, .credits_link_heading,
 .junkdrawer_link_heading {
     pointer-events: none;
 }
@@ -988,54 +1025,54 @@ body:has(:is(.vkei_tab, .j-cp_tab, .rock_tab, .misc_tab):hover) :is(
     opacity: 0;
 }
 
-body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) 
+body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover)
 .default_link_heading div {
     opacity: 0;
 }
 
 body:has(.music_link:hover) .music_link_heading div {
-    opacity: 1; 
+    opacity: 1;
 }
 
 body:has(.credits_link:hover) .credits_link_heading div {
-    opacity: 1; 
+    opacity: 1;
 }
 
 body:has(.junkdrawer_link:hover) .junkdrawer_link_heading div {
-     opacity: 1; 
+    opacity: 1;
 }
 
 body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
 .music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(7) {
-    transition-delay: 0s; 
+    transition-delay: 0s;
 }
 
 body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
 .music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(6) {
-    transition-delay: 0.1s; 
+    transition-delay: 0.1s;
 }
 
 body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
 .music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(5) {
-    transition-delay: 0.2s; 
+    transition-delay: 0.2s;
 }
 
 body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
 .music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(4) {
-    transition-delay: 0.3s; 
+    transition-delay: 0.3s;
 }
 
 body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
 .music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(3) {
-    transition-delay: 0.4s; 
+    transition-delay: 0.4s;
 }
 
 body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
 .music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(2) {
-    transition-delay: 0.5s; 
+    transition-delay: 0.5s;
 }
 
 body:has(:is(.music_link, .credits_link, .junkdrawer_link):hover) :is(
 .music_link_heading, .credits_link_heading, .junkdrawer_link_heading) div:nth-child(1) {
-    transition-delay: 0.6s; 
+    transition-delay: 0.6s;
 }
